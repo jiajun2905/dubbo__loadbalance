@@ -13,7 +13,7 @@ import java.util.Scanner;
 @Service
 public class HelloWorldRpcService {
 
-    @Reference
+    @Reference(loadbalance = "custom")
     private IHelloWorldService helloWorldService;
 
 

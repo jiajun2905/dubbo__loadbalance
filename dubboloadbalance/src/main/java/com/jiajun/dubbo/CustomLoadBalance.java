@@ -23,7 +23,9 @@ public class CustomLoadBalance implements LoadBalance {
         System.out.println("---- register.ip is " + ip);
 
         //可以用Filter机制设置attachment 传递数据
-        System.out.println("---" + invocation.getAttachments());;
+        System.out.println("---" + invocation.getAttachments());
+
+        //获取参数信息，根据参数选取指定的invoker，可以考虑用attachment传递，这里没作思考
         Integer index = (Integer) invocation.getArguments()[0];
         if (index >= invokers.size()){
             index = invokers.size()-1;
