@@ -1,0 +1,18 @@
+server:
+    port: 9080
+    context-path:
+
+spring:
+  dubbo:
+    application:
+      name: demo-consumer
+    base-package: com.jiajun  # dubbo服务调用者所在的包
+    protocol: zookeeper
+    registry:
+          address: 127.0.0.1                   # zookeeper注册中心的地址
+          port: 2181                           # zookeeper注册中心的端口
+    consumer:
+      timeout: 1000
+      check: true                          # 服务启动时检查被调用服务是否可用
+      retries: 2
+      loadbalance: custom                          # 服务调用重试次数
